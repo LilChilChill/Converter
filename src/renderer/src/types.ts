@@ -45,15 +45,19 @@ export const CATEGORIES: CategoryConfig[] = [
   {
     id: 'document',
     name: 'Documents',
-    description: 'Chuyển đổi DOCX, Markdown, HTML, TXT',
-    acceptedExts: ['docx', 'md', 'html', 'txt'],
-    fileFilter: { name: 'Document Files', extensions: ['docx', 'md', 'html', 'htm', 'txt'] },
+    description: 'Chuyển đổi DOCX, PDF, Markdown, HTML, TXT',
+    acceptedExts: ['docx', 'pdf', 'md', 'html', 'htm', 'txt'],
+    fileFilter: {
+      name: 'Document Files',
+      extensions: ['docx', 'pdf', 'md', 'html', 'htm', 'txt']
+    },
     conversionMap: {
-      docx: ['html', 'md', 'txt'],
-      md: ['html', 'txt'],
-      html: ['md', 'txt'],
-      htm: ['md', 'txt'],
-      txt: ['md']
+      docx: ['pdf', 'html', 'md', 'txt'],
+      pdf:  ['txt', 'md', 'html'],
+      md:   ['pdf', 'html', 'txt'],
+      html: ['pdf', 'md', 'txt'],
+      htm:  ['pdf', 'md', 'txt'],
+      txt:  ['pdf', 'md', 'html']
     }
   },
   {
