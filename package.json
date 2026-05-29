@@ -2,6 +2,7 @@
   "name": "vivucode-converter",
   "version": "1.0.0",
   "description": "ViVuCode File Converter - Convert Data, Documents, Images & Media",
+  "author": "ViVuCode",
   "main": "out/main/index.js",
   "scripts": {
     "dev": "electron-vite dev",
@@ -47,16 +48,26 @@
   },
   "build": {
     "appId": "com.vivucode.converter",
-    "productName": "ViVuCode Converter",
+    "productName": "Converter",
     "directories": {
+      "buildResources": "build",
       "output": "dist"
     },
     "files": [
-      "out/**/*",
-      "node_modules/**/*"
+      "out/**/*"
     ],
+    "extraMetadata": {
+      "main": "out/main/index.js"
+    },
     "win": {
-      "target": "nsis"
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Converter"
     }
   }
 }
