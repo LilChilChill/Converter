@@ -1,0 +1,61 @@
+{
+  "name": "vivucode-converter",
+  "version": "1.0.0",
+  "description": "ViVuCode File Converter - Convert Data, Documents, Images & Media",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "pack": "electron-vite build && electron-builder"
+  },
+  "devDependencies": {
+    "@electron-toolkit/tsconfig": "^1.0.1",
+    "@types/fluent-ffmpeg": "^2.1.24",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@types/turndown": "^5.0.4",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.17",
+    "electron": "^28.1.3",
+    "electron-builder": "^24.9.1",
+    "electron-vite": "^2.0.0",
+    "playwright-core": "^1.60.0",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.0",
+    "@electron-toolkit/utils": "^3.0.0",
+    "@iarna/toml": "^2.2.5",
+    "csv-parse": "^5.5.3",
+    "csv-stringify": "^6.4.5",
+    "fast-xml-parser": "^4.3.4",
+    "ffmpeg-static": "^5.2.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "jimp": "^0.22.12",
+    "js-yaml": "^4.1.0",
+    "mammoth": "^1.7.0",
+    "marked": "^11.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "turndown": "^7.1.2"
+  },
+  "build": {
+    "appId": "com.vivucode.converter",
+    "productName": "ViVuCode Converter",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
